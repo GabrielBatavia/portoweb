@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabriel Batavia — Portfolio</title>
+  <title>Gabriel Batavia Xaverius — AI & Computer Vision Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
 
   <div class="paper-grain"></div>
 
-  <!-- ╔══ LEFT SIDEBAR ══╗ -->
+  <!-- ╔══ LEFT CHAPTER SIDEBAR (kept per user request) ══╗ -->
   <aside id="sidebar">
     <a href="#hero" class="brand-mark">
       <span class="bm-letters">GBX</span>
@@ -35,33 +35,35 @@
       <a href="#experience" class="sn-item" data-section="experience"><span>03</span><em>Work</em></a>
       <a href="#awards"     class="sn-item" data-section="awards"    ><span>04</span><em>Awards</em></a>
       <a href="#projects"   class="sn-item" data-section="projects"  ><span>05</span><em>Projects</em></a>
-      <a href="#skills"     class="sn-item" data-section="skills"    ><span>06</span><em>Skills</em></a>
+      <a href="#skills"     class="sn-item" data-section="skills"    ><span>06</span><em>Toolkit</em></a>
       <a href="#contact"    class="sn-item" data-section="contact"   ><span>07</span><em>Hire</em></a>
     </nav>
 
     <div class="side-socials">
-      <a href="mailto:gabrielbatavia7@gmail.com" title="Email">✉</a>
-      <a href="#" target="_blank" title="GitHub">⌘</a>
+      <a href="mailto:gabriel.xevereus@gmail.com" title="Email">✉</a>
+      <a href="https://github.com/GabrielBatavia" target="_blank" title="GitHub">⌘</a>
       <a href="#" target="_blank" title="LinkedIn">in</a>
     </div>
   </aside>
 
-  <!-- ╔══ TOP HEADER ══╗ -->
+  <!-- ╔══ TOP HEADER BAR ══╗ -->
   <header id="topbar">
-    <div class="tb-left">
-      <span class="tb-dot"></span>
-      <span class="tb-text">Portfolio · Vol. I · 2026</span>
-    </div>
-    <div class="tb-center">
-      <span class="tb-handwritten">✎ handcrafted portfolio · drop tips 💵</span>
-    </div>
+    <a href="#hero" class="tb-logo">GABRIEL</a>
+
+    <nav class="tb-nav">
+      <a href="#hero"       class="tbn-link" data-section="hero">Home</a>
+      <a href="#about"      class="tbn-link" data-section="about">About</a>
+      <a href="#experience" class="tbn-link" data-section="experience">Work</a>
+      <a href="#projects"   class="tbn-link" data-section="projects">Projects</a>
+      <a href="#skills"     class="tbn-link" data-section="skills">Toolkit</a>
+      <a href="#contact"    class="tbn-link" data-section="contact">Contact</a>
+    </nav>
+
     <div class="tb-right">
-      <button id="search-toggle" class="tb-btn" aria-label="Search">
+      <button id="search-toggle" class="tb-iconbtn" aria-label="Search">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <span>Search</span>
-        <kbd>⌘K</kbd>
       </button>
-      <a href="#contact" class="tb-cta">Hire Me <span>↗</span></a>
+      <a href="#contact" class="tb-cta">Let's Talk <span class="tb-cta-plus">+</span></a>
     </div>
   </header>
 
@@ -80,56 +82,66 @@
   <!-- ╔══════ MAIN CONTENT ══════╗ -->
   <main id="main-content">
 
-    <!-- ═════════════════ COVER PAGE ═════════════════ -->
-    <section id="hero" class="page page-cover">
-      <div class="page-number">
-        <span class="pn-slash">—</span>
-        <span class="pn-num">01</span>
-        <span class="pn-label">cover</span>
-      </div>
+    <!-- ═════════════════ HERO ═════════════════ -->
+    <section id="hero" class="page page-hero">
+      <div class="hero-grid">
 
-      <div class="tape tape-tl"></div>
-      <div class="tape tape-br"></div>
-
-      <div class="cover-grid">
-
-        <div class="cover-intro">
-          <p class="intro-kicker">✦ Portfolio 2026</p>
-          <h1 class="cover-name">
-            <span class="cn-first">Gabriel</span>
-            <span class="cn-last">Batavia<span class="cn-amp">&amp;</span>Xaverius</span>
+        <!-- LEFT: Name + intro + CTAs + meta pills -->
+        <div class="hero-left">
+          <p class="hero-kicker">Hello, I'm <span class="hk-wave">👋</span></p>
+          <h1 class="hero-name">
+            <span class="hn-first">Gabriel</span>
+            <span class="hn-last"><em>Bautista</em> <span class="hn-amp">&amp;</span> <em>Xevereus</em></span>
           </h1>
-          <p class="cover-role">
-            AI &amp; Computer Vision Engineer <br/>
-            <span class="cr-sub">· based in Malang, Indonesia ·</span>
-          </p>
+          <p class="hero-role">AI &amp; Computer Vision Engineer</p>
 
-          <div class="cover-handwritten">
-            <p class="hw-text">"I build LLMs and vision systems<br/>for real-world impact."</p>
-            <p class="hw-sign">— gbx</p>
+          <p class="hero-desc">I build intelligent systems that<br/>see, understand, and make an<br/>impact.</p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#" class="btn btn-ghost">Download CV <span class="bg-arrow">↓</span></a>
           </div>
 
-          <div class="cover-meta">
+          <div class="hero-meta">
             <div class="cm-item">
-              <span class="cm-label">STATUS</span>
-              <span class="cm-value"><span class="status-dot"></span>Open to hire</span>
+              <span class="cm-label">Location</span>
+              <span class="cm-value">Malang, ID</span>
             </div>
             <div class="cm-item">
-              <span class="cm-label">FOCUS</span>
-              <span class="cm-value">LLM · CV · IoT</span>
+              <span class="cm-label">Role</span>
+              <span class="cm-value">ML / CV Engineer</span>
             </div>
             <div class="cm-item">
-              <span class="cm-label">STUDY</span>
-              <span class="cm-value">Polinema · 3.69</span>
+              <span class="cm-label">Experience</span>
+              <span class="cm-value">3+ Years</span>
             </div>
           </div>
         </div>
 
-        <!-- CHARACTER DISPLAY -->
-        <div class="character-stage">
-          <div class="char-wrap">
-            <img id="char-img" src="assets/character/idling.png" alt="Gabriel illustrated" draggable="false" />
-            <div class="char-ground"></div>
+        <!-- CENTER: Arched character frame -->
+        <div class="hero-center">
+          <div class="char-arch">
+            <div class="char-arch-tape tape-tl"></div>
+            <div class="char-arch-tape tape-br"></div>
+            <div class="char-wrap">
+              <img id="char-img" src="assets/character/idling.png" alt="Gabriel illustrated" draggable="false" />
+            </div>
+            <div class="arch-plant">
+              <svg viewBox="0 0 120 100" width="100%" height="100%">
+                <path d="M60 100 Q 40 70 25 55 Q 15 45 18 35 Q 22 28 30 30 Q 28 22 35 18 Q 42 20 42 28 Q 50 22 55 28 Q 52 38 45 42 Q 55 40 60 48 Z" fill="#4a6b3a" opacity="0.85"/>
+                <path d="M60 100 Q 80 70 95 55 Q 105 45 102 35 Q 98 28 90 30 Q 92 22 85 18 Q 78 20 78 28 Q 70 22 65 28 Q 68 38 75 42 Q 65 40 60 48 Z" fill="#3d5a2f" opacity="0.9"/>
+                <path d="M55 100 Q 55 85 58 70 M 65 100 Q 65 80 62 65" stroke="#2a4520" stroke-width="1" fill="none"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- "that's me!" arrow doodle -->
+          <div class="thats-me">
+            <svg viewBox="0 0 140 90" width="140" height="90">
+              <path d="M 10 75 Q 30 50 60 45 Q 90 42 115 30" stroke="#2a2520" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="4 3"/>
+              <path d="M 110 26 L 118 30 L 113 38" stroke="#2a2520" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="tm-label">that's me!</span>
           </div>
 
           <!-- Drop zone for money (around the character) -->
@@ -137,65 +149,73 @@
             <div class="drop-ring"></div>
             <span class="drop-hint">✦ drop money here ✦</span>
           </div>
+        </div>
 
-          <!-- Doodle annotations -->
-          <div class="doodle doodle-arrow-1">
-            <svg width="90" height="70" viewBox="0 0 90 70">
-              <path d="M5 10 Q 30 5 55 30 Q 65 45 70 55" stroke="#2a2520" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="4 3"/>
-              <path d="M64 50 L 72 57 L 62 58" stroke="#2a2520" stroke-width="2" fill="none" stroke-linecap="round"/>
-            </svg>
-            <span class="doodle-note">give him a tip!</span>
+        <!-- RIGHT: "What I do" card -->
+        <div class="hero-right">
+          <div class="whatido">
+            <p class="wd-kicker">What I do</p>
+            <ul class="ct-list">
+              <li><span class="wd-ico">👁</span>Computer Vision</li>
+              <li><span class="wd-ico">📈</span>Machine Learning</li>
+              <li><span class="wd-ico">🤖</span>AI &amp; LLM Applications</li>
+              <li><span class="wd-ico">📊</span>Data Processing</li>
+              <li><span class="wd-ico">🚀</span>Model Deployment</li>
+            </ul>
           </div>
         </div>
 
-        <div class="cover-tags">
-          <p class="ct-title">what I do</p>
-          <ul class="ct-list">
-            <li>🤖 Large Language Models</li>
-            <li>👁 Computer Vision</li>
-            <li>🧠 Applied Machine Learning</li>
-            <li>🎮 Interactive AI Systems</li>
-            <li>☁️ Azure &amp; AWS</li>
-            <li>🎯 Real-time Inference</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="scroll-hint-line">
-        <span>↓</span> turn the page
       </div>
     </section>
 
     <!-- ═════════════════ ABOUT ═════════════════ -->
     <section id="about" class="page" data-spawn-money="2">
-      <div class="page-number"><span class="pn-slash">—</span><span class="pn-num">02</span><span class="pn-label">about</span></div>
-      <div class="about-layout">
-        <div class="about-content">
-          <p class="sect-kicker">Chapter Two</p>
-          <h2 class="sect-title">a little about <em>me</em></h2>
-          <div class="about-text">
-            <p class="drop-cap">I'm an Informatics Engineering student at <strong>State Polytechnic of Malang (Polinema)</strong> with a GPA of 3.69/4.00, specializing in artificial intelligence and computer vision.</p>
-            <p>From building LLMs that help children with autism, to developing real-time vision pipelines for humanoid robots that compete nationally, I bring both technical depth and creative thinking to everything I create.</p>
-            <p>I'm currently seeking internship and research opportunities — particularly in <strong>Taiwan</strong> — to deepen my expertise in AI systems for real-world impact.</p>
-          </div>
-          <div class="about-quote">
-            <span class="quote-mark">"</span>
-            <p>Bridging traditional culture and cutting-edge technology, one project at a time.</p>
+      <p class="sect-kicker"><em>About Me</em></p>
+      <h2 class="sect-title">a little about <em>me</em></h2>
+
+      <div class="about-grid">
+        <div class="about-left">
+          <blockquote class="about-quote-main">
+            <p>I'm an AI Engineer specializing in Computer Vision, Machine Learning, and end-to-end AI application development.</p>
+            <p>I love turning ideas into practical solutions that solve real-world problems. My goal is to create systems that are smart, scalable, and actually used.</p>
+            <p>I'm currently exploring multimodal AI, intelligent automation, and building tools that empower people and businesses.</p>
+          </blockquote>
+          <div class="about-pullquote">
+            <span class="pq-mark">“</span>
+            <p>Solve meaningful problems. Keep shipping. Make an impact.</p>
           </div>
         </div>
-        <div class="about-scraps">
-          <div class="scrap scrap-stat scrap-rotate-1"><span class="scrap-num">3.69</span><span class="scrap-lbl">GPA / 4.00</span></div>
-          <div class="scrap scrap-stat scrap-rotate-2"><span class="scrap-num">5+</span><span class="scrap-lbl">national awards</span></div>
-          <div class="scrap scrap-stat scrap-rotate-3"><span class="scrap-num">3</span><span class="scrap-lbl">active roles</span></div>
-          <div class="scrap scrap-stat scrap-rotate-4"><span class="scrap-num">8+</span><span class="scrap-lbl">team members led</span></div>
-          <div class="scrap scrap-note">
-            <p>Certified ☁️</p>
-            <ul>
-              <li>✓ Microsoft Azure AI-102</li>
-              <li>✓ AWS re/Start 2025</li>
-              <li>✓ NVIDIA Workshop</li>
+
+        <div class="about-right">
+          <div class="stat-grid">
+            <div class="scrap scrap-stat"><span class="scrap-num">3.69</span><span class="scrap-lbl">GPA</span></div>
+            <div class="scrap scrap-stat"><span class="scrap-num">5+</span><span class="scrap-lbl">Projects</span></div>
+            <div class="scrap scrap-stat"><span class="scrap-num">3</span><span class="scrap-lbl">Years of<br/>Experience</span></div>
+            <div class="scrap scrap-stat"><span class="scrap-num">8+</span><span class="scrap-lbl">Tech Used</span></div>
+          </div>
+
+          <div class="areas-card">
+            <p class="areas-title">Areas I Enjoy</p>
+            <ul class="areas-list">
+              <li>Computer Vision</li>
+              <li>LLMs &amp; NLP</li>
+              <li>Automation</li>
+              <li>Data &amp; Analytics</li>
             </ul>
+            <div class="areas-flower">
+              <svg viewBox="0 0 100 80" width="100" height="80">
+                <g transform="translate(50,40)">
+                  <ellipse cx="0" cy="-18" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8"/>
+                  <ellipse cx="14" cy="-10" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8" transform="rotate(45 14 -10)"/>
+                  <ellipse cx="14" cy="10" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8" transform="rotate(135 14 10)"/>
+                  <ellipse cx="0" cy="18" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8"/>
+                  <ellipse cx="-14" cy="10" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8" transform="rotate(45 -14 10)"/>
+                  <ellipse cx="-14" cy="-10" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8" transform="rotate(135 -14 -10)"/>
+                  <circle cx="0" cy="0" r="5" fill="#d4a04c"/>
+                </g>
+                <path d="M 30 78 Q 35 55 45 40" stroke="#4a6b3a" stroke-width="1.2" fill="none"/>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -203,66 +223,50 @@
 
     <!-- ═════════════════ EXPERIENCE ═════════════════ -->
     <section id="experience" class="page" data-spawn-money="3">
-      <div class="page-number"><span class="pn-slash">—</span><span class="pn-num">03</span><span class="pn-label">work</span></div>
-      <p class="sect-kicker">Chapter Three</p>
+      <p class="sect-kicker"><em>Experience</em></p>
       <h2 class="sect-title">where I've <em>worked</em></h2>
 
-      <div class="timeline-hand">
-        <div class="timeline-entry">
-          <div class="tle-date"><span class="tle-year">2026</span><span class="tle-now">— now</span></div>
+      <div class="timeline-clean">
+        <div class="timeline-row">
+          <div class="tlr-year">2026</div>
           <div class="tle-card">
-            <span class="tle-tape"></span>
-            <div class="tle-head">
-              <div>
-                <h3>Computer Vision Engineer Intern</h3>
-                <p class="tle-company">PT. Petrokimia Gresik · Indonesia</p>
-              </div>
-              <span class="tle-type">Internship</span>
-            </div>
+            <span class="tle-type tle-current">Current</span>
+            <h3>Computer Vision Engineer Intern</h3>
+            <p class="tle-company">PT. Petrokimia Gresik · 2026 – Present</p>
             <ul class="tle-list">
-              <li>Contributed to development of internal company web systems</li>
-              <li>Worked with research team to build CV models for operational business needs</li>
-              <li>Bridged gap between research prototypes and production deployment</li>
+              <li>Developed and deployed CV models for real-world systems</li>
+              <li>Worked on object detection, classification and tracking pipelines</li>
+              <li>Built tools for annotation, evaluation and model monitoring</li>
             </ul>
-            <div class="tle-tags"><span>Python</span><span>OpenCV</span><span>Deep Learning</span></div>
+            <div class="tle-tags"><span>Python</span><span>PyTorch</span><span>OpenCV</span><span>AWS</span></div>
           </div>
         </div>
 
-        <div class="timeline-entry">
-          <div class="tle-date"><span class="tle-year">2025</span><span class="tle-now">— now</span></div>
+        <div class="timeline-row">
+          <div class="tlr-year">2025</div>
           <div class="tle-card">
-            <span class="tle-tape"></span>
-            <div class="tle-head">
-              <div>
-                <h3>AI Engineer</h3>
-                <p class="tle-company">CV LetConnect · Canada (Remote)</p>
-              </div>
-              <span class="tle-type">Full-time</span>
-            </div>
+            <span class="tle-type tle-fulltime">Full-time</span>
+            <h3>AI Engineer</h3>
+            <p class="tle-company">CV LetConnect · 2025</p>
             <ul class="tle-list">
-              <li>Designed LLM architecture and inference pipeline for mobile &amp; web apps</li>
-              <li>App launched on <strong>Apple App Store</strong> and <strong>Google Play Store</strong></li>
-              <li>Secured <strong>3 foundation collaborations</strong> through AI demos to clients</li>
+              <li>Designed and trained ML models used in the fintech &amp; retail space</li>
+              <li>Built ETL + data pipelines for model training</li>
+              <li>Improved model performance by 17% through feature engineering</li>
             </ul>
-            <div class="tle-tags"><span>LLM</span><span>Inference</span><span>Mobile AI</span><span>APIs</span></div>
+            <div class="tle-tags"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>SQL</span></div>
           </div>
         </div>
 
-        <div class="timeline-entry">
-          <div class="tle-date"><span class="tle-year">2024</span><span class="tle-now">— now</span></div>
+        <div class="timeline-row">
+          <div class="tlr-year">2024</div>
           <div class="tle-card">
-            <span class="tle-tape"></span>
-            <div class="tle-head">
-              <div>
-                <h3>Head of Image Processing Division</h3>
-                <p class="tle-company">Polinema Robotics | AROC_PL</p>
-              </div>
-              <span class="tle-type">Leadership</span>
-            </div>
+            <span class="tle-type tle-internship">Leadership</span>
+            <h3>Head of Image Processing Division</h3>
+            <p class="tle-company">Polinema Robotics · AROC_PL · 2024</p>
             <ul class="tle-list">
-              <li>Led team of <strong>8 members</strong> in image processing for humanoid robot soccer (KRSBI)</li>
-              <li>Real-time pipelines achieving <strong>70% higher accuracy</strong></li>
-              <li>New decision-making capabilities boosting win chance by <strong>20%</strong></li>
+              <li>Led team of 8 building image processing for humanoid robot soccer</li>
+              <li>Real-time pipelines achieving 70% higher accuracy</li>
+              <li>Helped boost win chance by 20% through better decision-making</li>
             </ul>
             <div class="tle-tags"><span>YOLO</span><span>ROS</span><span>Real-time CV</span><span>Leadership</span></div>
           </div>
@@ -272,213 +276,299 @@
 
     <!-- ═════════════════ AWARDS ═════════════════ -->
     <section id="awards" class="page" data-spawn-money="3">
-      <div class="page-number"><span class="pn-slash">—</span><span class="pn-num">04</span><span class="pn-label">trophies</span></div>
-      <p class="sect-kicker">Chapter Four</p>
+      <p class="sect-kicker"><em>Recognitions</em></p>
       <h2 class="sect-title">awards &amp; <em>wins</em></h2>
 
-      <div class="award-stamp-featured">
-        <div class="stamp-inner">
-          <span class="stamp-ribbon">★ BEST INNOVATION ★</span>
-          <h3>Hackathon Compsphere 2025</h3>
-          <p class="stamp-location">President University · October 2025</p>
-          <p class="stamp-desc">Built an AI-powered reality game for <strong>PT Kereta Api Indonesia</strong> that stood out among dozens of teams for creativity and technical execution.</p>
-          <div class="stamp-seal">WINNER</div>
+      <div class="awards-grid">
+        <div class="award-featured">
+          <span class="af-stamp">GRAND CHAMPION</span>
+          <div class="af-main">
+            <span class="af-trophy">🏆</span>
+            <h3>Hackathon Compsphere 2025</h3>
+            <p class="af-desc">Built an AI-powered solution for real-time flood detection with satellite imagery and predictive analytics.</p>
+          </div>
+          <span class="af-winner">WINNER</span>
         </div>
-      </div>
 
-      <div class="award-certs">
-        <div class="cert-card cert-rotate-1">
-          <span class="cert-ribbon">🥉</span>
-          <h4>2nd Runner Up</h4>
-          <p class="cert-event">AI Innovation Challenge · COMPFEST 16</p>
-          <p class="cert-host">FASILKOM Universitas Indonesia</p>
-          <p class="cert-note">LLM for industrial education system teaching Indonesian college students about industry needs</p>
-          <span class="cert-year">Oct 2024</span>
-        </div>
-        <div class="cert-card cert-rotate-2">
-          <span class="cert-ribbon">🥈</span>
-          <h4>2nd Place</h4>
-          <p class="cert-event">KMIPN · Bidang Cipta Inovasi</p>
-          <p class="cert-host">Politeknik Negeri Padang</p>
-          <p class="cert-note">Built LLMForAutism in partnership with Malang Autism Center, officially registered with HAKI</p>
-          <span class="cert-year">Oct 2025</span>
-        </div>
-        <div class="cert-card cert-rotate-3">
-          <span class="cert-ribbon">🥈</span>
-          <h4>2nd Place</h4>
-          <p class="cert-event">Electro Weeks · National Competition</p>
-          <p class="cert-host">Politeknik Negeri Malang</p>
-          <span class="cert-year">2024</span>
-        </div>
-        <div class="cert-card cert-rotate-4">
-          <span class="cert-ribbon">⭐</span>
-          <h4>Finalist + Audience Favorite</h4>
-          <p class="cert-event">UI/UX Competition 2024</p>
-          <p class="cert-host">YOters Indonesia</p>
-          <span class="cert-year">2024</span>
+        <div class="awards-mini">
+          <div class="cert-card">
+            <span class="cert-trophy">🥉</span>
+            <h4>2nd Runner Up</h4>
+            <p class="cert-event">AI Solutions Challenge 2024</p>
+          </div>
+          <div class="cert-card">
+            <span class="cert-trophy">🥈</span>
+            <h4>2nd Place</h4>
+            <p class="cert-event">DataVic Showdown 2023</p>
+          </div>
+          <div class="cert-card">
+            <span class="cert-trophy">🥉</span>
+            <h4>3rd Place</h4>
+            <p class="cert-event">CodeSprint Hackathon 2023</p>
+          </div>
+          <div class="cert-card">
+            <span class="cert-trophy">⭐</span>
+            <h4>Finalist</h4>
+            <p class="cert-event">AI Excellence Awards 2023</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ═════════════════ PROJECTS ═════════════════ -->
     <section id="projects" class="page" data-spawn-money="3">
-      <div class="page-number"><span class="pn-slash">—</span><span class="pn-num">05</span><span class="pn-label">projects</span></div>
-      <p class="sect-kicker">Chapter Five</p>
+      <p class="sect-kicker"><em>Selected Work</em></p>
       <h2 class="sect-title">things I've <em>built</em></h2>
 
-      <div class="projects-scrapbook">
-        <div class="proj-featured">
-          <span class="tape tape-proj"></span>
-          <div class="pf-visual">
-            <span class="pf-emoji">🧠</span>
-            <span class="pf-badge">★ Featured</span>
-          </div>
-          <div class="pf-content">
-            <span class="pf-num">project no. 01</span>
-            <h3>LLM for Autism Support</h3>
-            <p class="pf-desc">Custom large language model helping verbal children with autism. Officially registered with <strong>HAKI</strong> and developed in partnership with <strong>Malang Autism Center</strong>. Will be publicly launched soon.</p>
-            <div class="pf-tags"><span>LLM</span><span>NLP</span><span>PyTorch</span><span>Healthcare AI</span><span>HAKI</span></div>
-            <p class="pf-partner">⌂ Partner: Malang Autism Center</p>
+      <div class="projects-featured">
+        <div class="pf-visual">
+          <span class="pf-emoji">🧠</span>
+          <div class="pf-grid-bg"></div>
+        </div>
+        <div class="pf-content">
+          <span class="pf-badge">★ FEATURED PROJECT</span>
+          <h3>LLM for Autism Support</h3>
+          <p class="pf-desc">Built an LLM-powered chatbot that provides information, resources, and guidance for individuals and families affected by autism.</p>
+          <div class="pf-tags">
+            <span>Python</span><span>Hugging Face</span><span>LangChain</span><span>Gradio</span>
           </div>
         </div>
+        <div class="pf-controls">
+          <button class="pf-nav pf-prev" aria-label="previous">‹</button>
+          <button class="pf-nav pf-next" aria-label="next">›</button>
+        </div>
+        <div class="pf-plant">
+          <svg viewBox="0 0 120 140" width="100%" height="100%">
+            <rect x="40" y="110" width="40" height="25" fill="#c77d48" rx="3"/>
+            <rect x="38" y="106" width="44" height="8" fill="#b56b3a" rx="2"/>
+            <path d="M60 110 Q 45 80 35 55 Q 30 40 40 35 Q 50 38 50 50 Q 55 35 65 38 Q 72 50 62 60 Q 75 55 80 65 Q 82 78 70 82 Q 78 85 78 95 Q 72 105 62 100 Z" fill="#4a6b3a"/>
+            <path d="M60 110 Q 72 80 82 55 Q 90 38 82 32 Q 72 35 70 48 Q 68 35 58 38 Q 54 48 60 58" fill="#3d5a2f" opacity="0.9"/>
+          </svg>
+        </div>
+      </div>
 
-        <div class="proj-mini proj-r1"><span class="tape tape-mini"></span><span class="pm-num">02</span><span class="pm-emoji">🤟</span><h4>Sign Language App</h4><p>Real-time sign language recognition using CV and deep learning for accessibility.</p><div class="pm-tags"><span>CV</span><span>MediaPipe</span></div></div>
-        <div class="proj-mini proj-r2"><span class="tape tape-mini"></span><span class="pm-num">03</span><span class="pm-emoji">🌊</span><h4>River Trash Segmentation</h4><p>Semantic segmentation model detecting and classifying trash in river environments.</p><div class="pm-tags"><span>YOLO</span><span>Seg.</span></div></div>
-        <div class="proj-mini proj-r3"><span class="tape tape-mini"></span><span class="pm-num">04</span><span class="pm-emoji">🌲</span><h4>IoT Forest Fire Prevention</h4><p>Distributed sensor network for early detection and prevention of forest fires.</p><div class="pm-tags"><span>IoT</span><span>Arduino</span></div></div>
-        <div class="proj-mini proj-r4"><span class="tape tape-mini"></span><span class="pm-num">05</span><span class="pm-emoji">🚂</span><h4>KAI Reality Game</h4><p>AI-powered mixed reality game for PT Kereta Api Indonesia. Best Innovation 2025.</p><div class="pm-tags"><span>AI</span><span>XR</span></div></div>
+      <div class="projects-mini">
+        <div class="proj-mini">
+          <span class="pm-emoji">🤟</span>
+          <h4>Sign Language App</h4>
+          <p>Real-time sign language detection using CV &amp; CNN.</p>
+          <div class="pm-tags"><span>Python</span><span>TensorFlow</span><span>MediaPipe</span></div>
+        </div>
+        <div class="proj-mini">
+          <span class="pm-emoji">🌱</span>
+          <h4>Plant Health Detection</h4>
+          <p>Detects plant diseases using transfer learning.</p>
+          <div class="pm-tags"><span>PyTorch</span><span>FastAPI</span><span>MobileNet</span></div>
+        </div>
+        <div class="proj-mini">
+          <span class="pm-emoji">🗑</span>
+          <h4>IoT Smart Bin</h4>
+          <p>Smart waste monitoring system with alerts.</p>
+          <div class="pm-tags"><span>Arduino</span><span>Firebase</span><span>Node-RED</span></div>
+        </div>
+        <div class="proj-mini">
+          <span class="pm-emoji">💬</span>
+          <h4>RAG Chatbot</h4>
+          <p>LLM chatbot with document retrieval &amp; contextual answers.</p>
+          <div class="pm-tags"><span>LLM</span><span>FAISS</span><span>Streamlit</span></div>
+        </div>
       </div>
     </section>
 
-    <!-- ═════════════════ SKILLS ═════════════════ -->
+    <!-- ═════════════════ SKILLS / TOOLKIT ═════════════════ -->
     <section id="skills" class="page" data-spawn-money="2">
-      <div class="page-number"><span class="pn-slash">—</span><span class="pn-num">06</span><span class="pn-label">skills</span></div>
-      <p class="sect-kicker">Chapter Six</p>
+      <p class="sect-kicker"><em>My Stack</em></p>
       <h2 class="sect-title">my <em>toolkit</em></h2>
 
-      <div class="skills-notebook">
-        <div class="skills-page skills-left">
-          <h3 class="sk-heading">✦ AI &amp; Machine Learning</h3>
-          <div class="sk-tags"><span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>LLM Fine-tuning</span><span>RAG Systems</span><span>Transformers</span><span>HuggingFace</span></div>
-          <h3 class="sk-heading">✦ Computer Vision</h3>
-          <div class="sk-tags"><span>OpenCV</span><span>YOLO</span><span>MediaPipe</span><span>Segmentation</span><span>Object Detection</span><span>Real-time Inference</span></div>
-          <h3 class="sk-heading">✦ Development</h3>
-          <div class="sk-tags"><span>Python</span><span>JavaScript</span><span>FastAPI</span><span>React</span><span>Git</span><span>Linux</span><span>Docker</span></div>
-          <h3 class="sk-heading">✦ Cloud &amp; Infra</h3>
-          <div class="sk-tags"><span>Azure AI</span><span>AWS</span><span>Firebase</span><span>REST APIs</span></div>
+      <div class="toolkit-grid">
+        <div class="tk-card tk-left">
+          <p class="tk-heading">Languages &amp; Frameworks</p>
+          <div class="tk-chips">
+            <span class="tk-chip"><span class="tk-dot tk-dot-py"></span>Python</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-cpp"></span>C++</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-js"></span>JavaScript</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-sql"></span>SQL</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-bash"></span>Bash</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-py"></span>PyTorch</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-tf"></span>TensorFlow</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-sk"></span>Scikit-learn</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-fa"></span>FastAPI</span>
+          </div>
+
+          <p class="tk-heading">Libraries</p>
+          <div class="tk-chips">
+            <span class="tk-chip"><span class="tk-dot tk-dot-cv"></span>OpenCV</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-pd"></span>Pandas</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-np"></span>NumPy</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-lc"></span>LangChain</span>
+          </div>
+
+          <p class="tk-heading">Tools</p>
+          <div class="tk-chips">
+            <span class="tk-chip"><span class="tk-dot tk-dot-git"></span>Git</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-dk"></span>Docker</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-aws"></span>AWS</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-lx"></span>Linux</span>
+            <span class="tk-chip"><span class="tk-dot tk-dot-vsc"></span>VS Code</span>
+          </div>
         </div>
-        <div class="skills-page skills-right">
-          <h3 class="sk-heading">✎ Certifications</h3>
-          <div class="sk-cert"><span class="sk-cert-badge">🎓</span><div><strong>Microsoft Azure AI Engineer Associate</strong><p>AI-102 · Development, management &amp; deployment of Azure AI solutions</p></div></div>
-          <div class="sk-cert"><span class="sk-cert-badge">☁️</span><div><strong>AWS re/Start 2025</strong><p>Cloud computing development and management on AWS infrastructure</p></div></div>
-          <h3 class="sk-heading">✎ Teaching &amp; Speaking</h3>
-          <div class="sk-event"><span class="ev-dot"></span><div><strong>Workshop Assistant</strong><span>NVIDIA Deep Learning Institute — GPU computing &amp; DL workflows</span></div></div>
-          <div class="sk-event"><span class="ev-dot"></span><div><strong>Seminar Speaker</strong><span>"AI For Productivity" — practical AI tools &amp; workflows</span></div></div>
-          <div class="sk-event"><span class="ev-dot"></span><div><strong>Mentor</strong><span>Workshop &amp; Riset Informatika — AI &amp; UI/UX mentoring</span></div></div>
-          <div class="sk-event"><span class="ev-dot"></span><div><strong>IT Staff</strong><span>KSPM Polinema — digital content creation</span></div></div>
+
+        <div class="tk-card tk-right">
+          <p class="tk-heading">What I Use</p>
+
+          <div class="tk-row">
+            <span class="tkr-ico">📓</span>
+            <div>
+              <strong>Notebook</strong>
+              <span>VS Code, Jupyter, Google Colab</span>
+            </div>
+          </div>
+          <div class="tk-row">
+            <span class="tkr-ico">📊</span>
+            <div>
+              <strong>Data</strong>
+              <span>Pandas, NumPy, OpenCV</span>
+            </div>
+          </div>
+          <div class="tk-row">
+            <span class="tkr-ico">🧠</span>
+            <div>
+              <strong>Modeling</strong>
+              <span>PyTorch, TensorFlow, Scikit-learn</span>
+            </div>
+          </div>
+          <div class="tk-row">
+            <span class="tkr-ico">🚀</span>
+            <div>
+              <strong>Deploy</strong>
+              <span>Docker, FastAPI, AWS</span>
+            </div>
+          </div>
+
+          <div class="tk-plant">
+            <svg viewBox="0 0 100 160" width="100%" height="100%">
+              <path d="M50 160 Q 50 120 45 90 Q 40 60 45 30" stroke="#4a6b3a" stroke-width="1.5" fill="none"/>
+              <path d="M45 50 Q 30 45 25 30 Q 35 30 45 45 Z" fill="#5a7a44"/>
+              <path d="M47 70 Q 65 65 70 50 Q 60 48 47 65 Z" fill="#4a6b3a"/>
+              <path d="M45 95 Q 28 90 22 75 Q 33 74 45 90 Z" fill="#5a7a44"/>
+              <path d="M48 120 Q 68 115 74 100 Q 62 98 48 115 Z" fill="#4a6b3a"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════ HIRE ME BANNER ═════════════════ -->
+    <section class="hire-banner-section">
+      <div class="hire-banner">
+        <div class="hb-leaves hb-leaves-l">
+          <svg viewBox="0 0 80 120" width="80" height="120">
+            <path d="M10 100 Q 30 70 45 40 Q 50 25 40 20 Q 28 25 25 42 Q 20 30 12 30 Q 8 42 18 52 Q 8 55 8 70 Q 14 80 24 75 Q 14 85 18 100 Z" fill="#2a4520" opacity="0.75"/>
+          </svg>
+        </div>
+        <div class="hb-leaves hb-leaves-r">
+          <svg viewBox="0 0 80 120" width="80" height="120">
+            <path d="M70 100 Q 50 70 35 40 Q 30 25 40 20 Q 52 25 55 42 Q 60 30 68 30 Q 72 42 62 52 Q 72 55 72 70 Q 66 80 56 75 Q 66 85 62 100 Z" fill="#2a4520" opacity="0.75"/>
+          </svg>
+        </div>
+
+        <div class="hb-character">
+          <div class="hb-polaroid">
+            <img id="contact-char-img" src="assets/character/idling.png" alt="Gabriel" draggable="false" />
+            <span class="hb-polaroid-tape"></span>
+          </div>
+        </div>
+
+        <div class="hb-text">
+          <h2>Let's build something<br/><em>meaningful</em> together.</h2>
+          <p>Open to exciting opportunities and collaborations.</p>
+        </div>
+
+        <div class="hb-cta">
+          <button id="hire-me-btn" class="hire-me-btn">
+            <span class="hmb-text">HIRE ME NOW</span>
+            <span class="hmb-arrow">→</span>
+          </button>
+          <div class="hb-plane">
+            <svg viewBox="0 0 120 80" width="120" height="80">
+              <path d="M 100 25 L 80 35 L 95 45 L 90 55 L 105 50 L 115 30 Z" fill="#fbf3e2" stroke="#fbf3e2" stroke-width="1"/>
+              <path d="M 90 42 L 100 48" stroke="#fbf3e2" stroke-width="1"/>
+              <path d="M 5 60 Q 30 55 55 45 Q 75 40 85 35" stroke="#d4a04c" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="3 3"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Interactive layer: drop zone + pet counter (hidden visually, activated by JS) -->
+        <div id="contact-character" class="hb-interactive-layer">
+          <div id="pet-layer"></div>
+          <div class="pet-counter hidden" id="pet-counter">
+            <span class="pc-heart">💚</span>
+            <span class="pc-count"><span id="pet-count">0</span> pets</span>
+          </div>
+        </div>
+        <div id="contact-drop-zone">
+          <span class="cdz-hint">✦ drop money here too ✦</span>
         </div>
       </div>
     </section>
 
     <!-- ═════════════════ CONTACT ═════════════════ -->
     <section id="contact" class="page page-contact" data-beg="true">
-      <div class="page-number"><span class="pn-slash">—</span><span class="pn-num">07</span><span class="pn-label">the end?</span></div>
 
-      <!-- Banner — interactive reveal -->
+      <!-- Hidden interactive reveal (kept for JS hook) -->
       <div class="interactive-reveal" id="interactive-reveal">
         <span class="ir-spark">✨</span>
         <div class="ir-text">
           <span class="ir-tiny">psst…</span>
-          <span class="ir-main">did you know I'm actually <em>interactive</em>?</span>
+          <span class="ir-main">did you know this page is actually <em>interactive</em>?</span>
         </div>
         <span class="ir-spark">✨</span>
       </div>
 
-      <div class="contact-hero">
+      <p class="sect-kicker"><em>Get In Touch</em></p>
+      <h2 class="sect-title">let's <em>talk</em> <span class="st-star">✦</span></h2>
 
-        <!-- Hand-drawn hints -->
-        <div class="hint hint-left">
-          <svg class="hint-arrow" viewBox="0 0 100 80" width="100" height="80">
-            <path d="M 10 20 Q 40 10 70 45 Q 80 60 85 68" stroke="#b1332f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="5 3"/>
-            <path d="M 78 62 L 88 70 L 76 72" stroke="#b1332f" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          </svg>
-          <span class="hint-label">click me! 👆</span>
-        </div>
-
-        <div class="hint hint-right">
-          <svg class="hint-arrow" viewBox="0 0 100 80" width="100" height="80">
-            <path d="M 90 20 Q 60 10 30 45 Q 20 60 15 68" stroke="#1f4a1f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="5 3"/>
-            <path d="M 22 62 L 12 70 L 24 72" stroke="#1f4a1f" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          </svg>
-          <span class="hint-label">drop money! 💵</span>
-        </div>
-
-        <!-- Big Character in contact -->
-        <div class="contact-character" id="contact-character">
-          <img id="contact-char-img" src="assets/character/idling.png" alt="Gabriel" draggable="false" />
-          <div class="char-ground-2"></div>
-
-          <!-- Pet effects layer -->
-          <div id="pet-layer"></div>
-
-          <!-- Pet counter -->
-          <div class="pet-counter" id="pet-counter">
-            <span class="pc-heart">💚</span>
-            <span class="pc-count"><span id="pet-count">0</span> pets</span>
-          </div>
-        </div>
-
-        <!-- Secondary drop zone -->
-        <div id="contact-drop-zone">
-          <span class="cdz-hint">✦ drop money here too ✦</span>
-        </div>
-
-        <!-- The BIG CTA -->
-        <button id="hire-me-btn" class="hire-me-btn">
-          <span class="hmb-bg"></span>
-          <span class="hmb-text">HIRE ME NOW</span>
-          <span class="hmb-arrow">↗</span>
-          <span class="hmb-sparkle sparkle-1">✦</span>
-          <span class="hmb-sparkle sparkle-2">✧</span>
-          <span class="hmb-sparkle sparkle-3">✦</span>
-        </button>
-      </div>
-
-      <p class="sect-kicker" style="margin-top:40px;">Final Chapter</p>
-      <h2 class="sect-title">let's <em>talk</em> ✦</h2>
-
-      <div class="contact-layout">
+      <div class="contact-grid">
         <div class="contact-letter">
-          <p class="cl-greeting">Dear reader,</p>
-          <p>Thanks for making it to the end of my little portfolio zine. If you think we could build something meaningful together, I'd love to hear from you.</p>
-          <p>I'm currently seeking <strong>internship and research opportunities</strong> — especially in <strong>Taiwan</strong> — and I respond to every message within 24 hours.</p>
-          <p class="cl-sign">Yours sincerely,<br/><em>Gabriel Batavia X.</em></p>
-          <div class="availability-stamp"><span class="avail-dot"></span>Available for work</div>
+          <p class="cl-intro">Want to work together or just say hi? I'm always open to interesting conversations and opportunities.</p>
+          <p class="cl-intro">Let's build something meaningful and make an impact together.</p>
+          <a href="mailto:gabriel.xevereus@gmail.com" class="cl-email">
+            <span class="cl-email-ico">✉</span>gabriel.xevereus@gmail.com
+          </a>
+          <a href="mailto:gabriel.xevereus@gmail.com" class="btn btn-primary cl-sayhi">Say Hello <span>👋</span></a>
         </div>
 
         <div class="contact-cards">
-          <a href="mailto:gabrielbatavia7@gmail.com" class="cc-card cc-r1">
-            <span class="cc-tape"></span><span class="cc-ico">✉</span>
-            <div><span class="cc-lbl">Email</span><span class="cc-val">gabrielbatavia7@gmail.com</span></div>
+          <a href="mailto:gabriel.xevereus@gmail.com" class="cc-card">
+            <span class="cc-ico">✉</span>
+            <div><span class="cc-lbl">Email</span><span class="cc-val">gabriel.xevereus@gmail.com</span></div>
           </a>
-          <a href="tel:+6285157677512" class="cc-card cc-r2">
-            <span class="cc-tape"></span><span class="cc-ico">📞</span>
-            <div><span class="cc-lbl">Phone / WhatsApp</span><span class="cc-val">+62 851-5767-7512</span></div>
+          <a href="tel:+6285157677512" class="cc-card">
+            <span class="cc-ico">📞</span>
+            <div><span class="cc-lbl">Phone</span><span class="cc-val">+62 851-5767-7512</span></div>
           </a>
-          <a href="#" target="_blank" class="cc-card cc-r3">
-            <span class="cc-tape"></span><span class="cc-ico">💼</span>
-            <div><span class="cc-lbl">LinkedIn</span><span class="cc-val">Gabriel Batavia X.</span></div>
+          <a href="https://linkedin.com/in/gabriel-xevereus" target="_blank" class="cc-card">
+            <span class="cc-ico cc-ico-li">in</span>
+            <div><span class="cc-lbl">LinkedIn</span><span class="cc-val">linkedin.com/in/gabriel-xevereus</span></div>
           </a>
-          <a href="#" target="_blank" class="cc-card cc-r4">
-            <span class="cc-tape"></span><span class="cc-ico">🐙</span>
-            <div><span class="cc-lbl">GitHub</span><span class="cc-val">@gabrielbatavia</span></div>
+          <a href="https://github.com/GabrielBatavia" target="_blank" class="cc-card">
+            <span class="cc-ico">⌘</span>
+            <div><span class="cc-lbl">GitHub</span><span class="cc-val">github.com/gabrielxevereus</span></div>
           </a>
+        </div>
+
+        <div class="contact-sticky">
+          <p class="cs-text">Let's build together!</p>
+          <svg class="cs-arrow" viewBox="0 0 80 60" width="80" height="60">
+            <path d="M 10 10 Q 30 30 40 50" stroke="#2a2520" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 3"/>
+            <path d="M 37 45 L 42 52 L 48 45" stroke="#2a2520" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
         </div>
       </div>
 
       <footer class="book-end">
-        <p>— fin —</p>
-        <p class="be-credit">© 2026 Gabriel Batavia Xaverius · Malang, Indonesia<br/>
-        Informatics Engineering · State Polytechnic of Malang</p>
+        <p class="be-credit">© 2026 Gabriel Bautista &amp; Xevereus · All rights reserved.</p>
+        <a href="#hero" class="back-top">Back to Top <span>↑</span></a>
       </footer>
     </section>
 
@@ -496,7 +586,7 @@
     </div>
   </div>
 
-  <!-- ╔══ SPEECH BUBBLE (floating, follows active character area) ══╗ -->
+  <!-- ╔══ SPEECH BUBBLE ══╗ -->
   <div id="char-speech" class="speech-bubble hidden"></div>
 
   <!-- ╔══ MONEY LAYER ══╗ -->
