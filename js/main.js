@@ -127,6 +127,13 @@ function onMoneyCollected() {
   coinCountEl.textContent = tipCount;
   coinTotalEl.textContent = rupiah(tipCount);
 
+  // Once the user has dropped a tip, hide the "drop here!" sign
+  const ds = document.getElementById('drop-sign');
+  if (ds && ds.classList.contains('shown')) {
+    ds.classList.remove('shown');
+    setTimeout(() => ds.classList.add('hidden'), 400);
+  }
+
   // Jar shake
   jarEl.style.animation = 'none';
   requestAnimationFrame(() => { jarEl.style.animation = 'jarShake 0.4s ease'; });
@@ -276,6 +283,73 @@ class MultiDropMoney extends MoneySystem {
 
 const moneySystem = new MultiDropMoney(onMoneyCollected);
 
+// ══════════════════════════════════════════════════════════════
+// TUTORIAL WIZARD — 3-step onboarding for the money mini-game
+// ══════════════════════════════════════════════════════════════
+const tutorialToast = document.getElementById('tutorial-toast');
+const ttIcon  = tutorialToast.querySelector('.tt-icon');
+const ttTitle = tutorialToast.querySelector('.tt-title');
+const ttText  = tutorialToast.querySelector('.tt-text');
+const ttClose = tutorialToast.querySelector('.tt-close');
+const dropSign = document.getElementById('drop-sign');
+
+let tutorialStep = 0; // 0 none · 1 shown-intro · 2 shown-drag · 3 shown-drop
+let toastTimeout = null;
+
+function showToast(icon, title, text, duration = 5500) {
+  ttIcon.textContent = icon;
+  ttTitle.textContent = title;
+  ttText.textContent = text;
+  tutorialToast.classList.remove('hidden');
+  requestAnimationFrame(() => tutorialToast.classList.add('shown'));
+  clearTimeout(toastTimeout);
+  if (duration) {
+    toastTimeout = setTimeout(dismissToast, duration);
+  }
+}
+function dismissToast() {
+  tutorialToast.classList.remove('shown');
+  clearTimeout(toastTimeout);
+  setTimeout(() => tutorialToast.classList.add('hidden'), 340);
+}
+ttClose.addEventListener('click', dismissToast);
+
+// Step 1 — first time money appears
+function tutorialStep1() {
+  if (tutorialStep >= 1) return;
+  tutorialStep = 1;
+  showToast('💵', "It's Rp 100 notes!",
+    "Collect them as you scroll — you'll know what to do with them later ✨", 6500);
+}
+
+// Step 2 — first time user tries to drag a note
+function tutorialStep2() {
+  if (tutorialStep >= 2) return;
+  tutorialStep = 2;
+  showToast('✨', "Save them for the end!",
+    "You can give these to me when you reach the end of the page 💚", 6000);
+}
+
+// Step 3 — character + drop sign appears when hire banner is in view
+function tutorialStep3() {
+  if (tutorialStep >= 3) return;
+  tutorialStep = 3;
+  dropSign.classList.remove('hidden');
+  requestAnimationFrame(() => dropSign.classList.add('shown'));
+  showToast('👇', "Drop your money on me!",
+    "Drag each Rp 100 note onto my photo to tip me 💸", 6500);
+}
+
+// Listen for first drag attempt on any money note (capture phase so it fires
+// before money.js's own handlers)
+function onFirstDragAttempt(e) {
+  if (!e.target.closest || !e.target.closest('.money-note')) return;
+  if (tutorialStep >= 2) return;
+  tutorialStep2();
+}
+document.addEventListener('mousedown',  onFirstDragAttempt, true);
+document.addEventListener('touchstart', onFirstDragAttempt, true);
+
 // Spawn money when a section enters view
 const spawnedSections = new Set();
 const spawnObserver = new IntersectionObserver(entries => {
@@ -283,6 +357,11 @@ const spawnObserver = new IntersectionObserver(entries => {
     if (e.isIntersecting && !spawnedSections.has(e.target)) {
       spawnedSections.add(e.target);
       moneySystem.spawnForSection(e.target);
+
+      // Tutorial step 1 — first money ever spawned
+      if (tutorialStep === 0) {
+        setTimeout(tutorialStep1, 900);
+      }
 
       // Attention grab — briefly shock!
       if (!isReacting && tipCount === 0) {
@@ -294,6 +373,20 @@ const spawnObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.3 });
 document.querySelectorAll('[data-spawn-money]').forEach(s => spawnObserver.observe(s));
+
+// Tutorial step 3 — watch the hire banner, not #contact,
+// since user sees character in the banner first
+const hireBannerEl = document.querySelector('.hire-banner');
+if (hireBannerEl) {
+  const hireObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        setTimeout(tutorialStep3, 400);
+      }
+    });
+  }, { threshold: 0.5 });
+  hireObserver.observe(hireBannerEl);
+}
 
 // ══════════════════════════════════════════════════════════════
 // SIDE NAV ACTIVE + COMPANION VISIBILITY

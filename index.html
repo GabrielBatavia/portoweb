@@ -477,6 +477,15 @@
             <img id="contact-char-img" src="assets/character/idling.png" alt="Gabriel" draggable="false" />
             <span class="hb-polaroid-tape"></span>
           </div>
+
+          <!-- Tutorial step 3 — "drop money on me!" sign -->
+          <div id="drop-sign" class="drop-sign hidden">
+            <svg class="ds-arrow" viewBox="0 0 120 90" width="120" height="90">
+              <path d="M 15 20 Q 50 15 85 55 Q 92 68 96 78" stroke="#fde8c0" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="5 3"/>
+              <path d="M 88 72 L 98 82 L 102 68" stroke="#fde8c0" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="ds-label">drop your money<br/>on me! 💸</span>
+          </div>
         </div>
 
         <div class="hb-text">
@@ -591,6 +600,16 @@
 
   <!-- ╔══ MONEY LAYER ══╗ -->
   <div id="money-layer"></div>
+
+  <!-- ╔══ TUTORIAL TOAST ══╗ -->
+  <div id="tutorial-toast" class="hidden">
+    <span class="tt-icon"></span>
+    <div class="tt-body">
+      <span class="tt-title"></span>
+      <span class="tt-text"></span>
+    </div>
+    <button class="tt-close" aria-label="dismiss">×</button>
+  </div>
 
   <!-- ╔══ CONFETTI LAYER ══╗ -->
   <div id="confetti-layer"></div>
