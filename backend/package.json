@@ -1,0 +1,14 @@
+{
+  "name": "gabriel-portfolio-api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node dev-server.js",
+    "check": "node --check api/v1/chat.js && node --check src/chat-handler.js",
+    "test": "node --test"
+  }
+}

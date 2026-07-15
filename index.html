@@ -1,641 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabriel Batavia Xaverius — AI & Computer Vision Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Meet Gabriel Batavia, an applied AI engineer building practical systems for industry, accessibility, and robotics."
+    />
+    <meta name="theme-color" content="#07080a" />
+    <title>Gabriel Batavia — Applied AI Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Schibsted+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%238c7bff%22/><path d=%22M9 23V9h7.3c4 0 6.3 1.4 6.3 4.4 0 1.8-.9 3-2.4 3.6 1.9.5 2.9 1.8 2.9 3.7 0 .8-.1 1.6-.5 2.3h-4c.5-.5.7-1.1.7-1.8 0-1.6-1.1-2.3-3.3-2.3h-3.2V23H9zm3.8-6.9h3.1c1.9 0 2.9-.7 2.9-2.1s-1-2-2.9-2h-3.1v4.1z%22 fill=%22%2307080a%22/></svg>" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conversation">Skip to conversation</a>
 
-  <!-- Preload character images -->
-  <link rel="preload" as="image" href="assets/character/idling.png">
-  <link rel="preload" as="image" href="assets/character/idling2.png">
-  <link rel="preload" as="image" href="assets/character/happy.png">
-  <link rel="preload" as="image" href="assets/character/get1tip.png">
-  <link rel="preload" as="image" href="assets/character/get3tip.png">
-  <link rel="preload" as="image" href="assets/character/get6tip.png">
-  <link rel="preload" as="image" href="assets/character/shock.png">
-</head>
-<body>
+    <div class="app-shell" data-character-state="greeting">
+      <canvas id="neural-field" aria-hidden="true"></canvas>
+      <div class="ambient ambient-one" aria-hidden="true"></div>
+      <div class="ambient ambient-two" aria-hidden="true"></div>
+      <div class="film-grain" aria-hidden="true"></div>
 
-  <div class="paper-grain"></div>
+      <header class="topbar">
+        <a class="wordmark" href="#conversation" aria-label="Gabriel Batavia home">
+          <span class="wordmark-name">Gabriel</span>
+          <span class="wordmark-index">GBX / 26</span>
+        </a>
 
-  <!-- ╔══ LEFT CHAPTER SIDEBAR (kept per user request) ══╗ -->
-  <aside id="sidebar">
-    <a href="#hero" class="brand-mark">
-      <span class="bm-letters">GBX</span>
-      <span class="bm-dot">.</span>
-    </a>
+        <div class="availability" aria-label="Availability status">
+          <span class="availability-pulse" aria-hidden="true"></span>
+          Open to AI engineering opportunities
+        </div>
 
-    <nav class="side-nav">
-      <a href="#hero"       class="sn-item" data-section="hero"      ><span>01</span><em>Cover</em></a>
-      <a href="#about"      class="sn-item" data-section="about"     ><span>02</span><em>About</em></a>
-      <a href="#experience" class="sn-item" data-section="experience"><span>03</span><em>Work</em></a>
-      <a href="#awards"     class="sn-item" data-section="awards"    ><span>04</span><em>Awards</em></a>
-      <a href="#projects"   class="sn-item" data-section="projects"  ><span>05</span><em>Projects</em></a>
-      <a href="#skills"     class="sn-item" data-section="skills"    ><span>06</span><em>Toolkit</em></a>
-      <a href="#contact"    class="sn-item" data-section="contact"   ><span>07</span><em>Hire</em></a>
-    </nav>
+        <button class="memory-trigger" type="button" data-memory="profile" aria-controls="memory-panel">
+          <span>Explore profile</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </button>
+      </header>
 
-    <div class="side-socials">
-      <a href="mailto:gabriel.xevereus@gmail.com" title="Email">✉</a>
-      <a href="https://github.com/GabrielBatavia" target="_blank" title="GitHub">⌘</a>
-      <a href="#" target="_blank" title="LinkedIn">in</a>
-    </div>
-  </aside>
-
-  <!-- ╔══ TOP HEADER BAR ══╗ -->
-  <header id="topbar">
-    <a href="#hero" class="tb-logo">GABRIEL</a>
-
-    <nav class="tb-nav">
-      <a href="#hero"       class="tbn-link" data-section="hero">Home</a>
-      <a href="#about"      class="tbn-link" data-section="about">About</a>
-      <a href="#experience" class="tbn-link" data-section="experience">Work</a>
-      <a href="#projects"   class="tbn-link" data-section="projects">Projects</a>
-      <a href="#skills"     class="tbn-link" data-section="skills">Toolkit</a>
-      <a href="#contact"    class="tbn-link" data-section="contact">Contact</a>
-    </nav>
-
-    <div class="tb-right">
-      <button id="search-toggle" class="tb-iconbtn" aria-label="Search">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      </button>
-      <a href="#contact" class="tb-cta">Let's Talk <span class="tb-cta-plus">+</span></a>
-    </div>
-  </header>
-
-  <!-- ╔══ SEARCH OVERLAY ══╗ -->
-  <div id="search-overlay" class="hidden">
-    <div class="search-box">
-      <div class="search-input-row">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="search-input" placeholder="Search experiences, awards, projects…" />
-        <button id="search-close">ESC</button>
-      </div>
-      <div id="search-results"></div>
-    </div>
-  </div>
-
-  <!-- ╔══════ MAIN CONTENT ══════╗ -->
-  <main id="main-content">
-
-    <!-- ═════════════════ HERO ═════════════════ -->
-    <section id="hero" class="page page-hero">
-      <div class="hero-grid">
-
-        <!-- LEFT: Name + intro + CTAs + meta pills -->
-        <div class="hero-left">
-          <p class="hero-kicker">Hello, I'm <span class="hk-wave">👋</span></p>
-          <h1 class="hero-name">
-            <span class="hn-first">Gabriel</span>
-            <span class="hn-last"><em>Bautista</em> <span class="hn-amp">&amp;</span> <em>Xevereus</em></span>
-          </h1>
-          <p class="hero-role">AI &amp; Computer Vision Engineer</p>
-
-          <p class="hero-desc">I build intelligent systems that<br/>see, understand, and make an<br/>impact.</p>
-
-          <div class="hero-ctas">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#" class="btn btn-ghost">Download CV <span class="bg-arrow">↓</span></a>
+      <main class="theatre" id="conversation">
+        <section class="conversation-stage" aria-labelledby="intro-title">
+          <div class="stage-kicker reveal reveal-one">
+            <span class="stage-index">01</span>
+            <span>Applied AI · Computer Vision · Product Systems</span>
           </div>
 
-          <div class="hero-meta">
-            <div class="cm-item">
-              <span class="cm-label">Location</span>
-              <span class="cm-value">Malang, ID</span>
+          <div class="intro-copy reveal reveal-two">
+            <p class="intro-label">Meet Gabriel</p>
+            <h1 id="intro-title">
+              Practical intelligence,<br />
+              built for the <em>real world.</em>
+            </h1>
+          </div>
+
+          <div class="conversation" aria-label="Conversation with Gabriel">
+            <div id="transcript" class="transcript" role="log" aria-live="polite" aria-relevant="additions text">
+              <article class="message message-assistant is-visible" data-message-id="greeting">
+                <p>Hi, I'm Gabriel. You can explore my work — or just ask me anything.</p>
+              </article>
             </div>
-            <div class="cm-item">
-              <span class="cm-label">Role</span>
-              <span class="cm-value">ML / CV Engineer</span>
+
+            <div id="prompt-list" class="prompt-list" aria-label="Suggested questions">
+              <button type="button" data-prompt="Why should we hire you for an AI engineering internship?">
+                Why should we hire you?
+              </button>
+              <button type="button" data-prompt="Show me your strongest computer vision experience.">
+                Show your strongest CV work
+              </button>
+              <button type="button" data-prompt="Have you shipped AI into real products?">
+                Have you shipped AI products?
+              </button>
             </div>
-            <div class="cm-item">
-              <span class="cm-label">Experience</span>
-              <span class="cm-value">3+ Years</span>
-            </div>
+
+            <form id="chat-form" class="chat-form" novalidate>
+              <label class="sr-only" for="chat-input">Ask Gabriel a question</label>
+              <div class="input-shell">
+                <span class="input-orbit" aria-hidden="true"></span>
+                <textarea
+                  id="chat-input"
+                  name="message"
+                  rows="1"
+                  maxlength="1000"
+                  placeholder="Ask Gabriel about his experience..."
+                  autocomplete="off"
+                ></textarea>
+                <button id="send-button" class="send-button" type="submit" aria-label="Send question">
+                  <span class="send-label">Ask</span>
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </button>
+              </div>
+              <div class="form-meta">
+                <p>
+                  <span class="ai-mark" aria-hidden="true">✦</span>
+                  AI-powered representation grounded in Gabriel's verified profile.
+                </p>
+                <button id="cancel-button" class="cancel-button" type="button" hidden>Stop response</button>
+              </div>
+            </form>
           </div>
-        </div>
+        </section>
 
-        <!-- CENTER: Arched character frame -->
-        <div class="hero-center">
-          <div class="char-arch">
-            <div class="char-arch-tape tape-tl"></div>
-            <div class="char-arch-tape tape-br"></div>
-            <div class="char-wrap">
-              <img id="char-img" src="assets/character/idling.png" alt="Gabriel illustrated" draggable="false" />
-            </div>
-            <div class="arch-plant">
-              <svg viewBox="0 0 120 100" width="100%" height="100%">
-                <path d="M60 100 Q 40 70 25 55 Q 15 45 18 35 Q 22 28 30 30 Q 28 22 35 18 Q 42 20 42 28 Q 50 22 55 28 Q 52 38 45 42 Q 55 40 60 48 Z" fill="#4a6b3a" opacity="0.85"/>
-                <path d="M60 100 Q 80 70 95 55 Q 105 45 102 35 Q 98 28 90 30 Q 92 22 85 18 Q 78 20 78 28 Q 70 22 65 28 Q 68 38 75 42 Q 65 40 60 48 Z" fill="#3d5a2f" opacity="0.9"/>
-                <path d="M55 100 Q 55 85 58 70 M 65 100 Q 65 80 62 65" stroke="#2a4520" stroke-width="1" fill="none"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- "that's me!" arrow doodle -->
-          <div class="thats-me">
-            <svg viewBox="0 0 140 90" width="140" height="90">
-              <path d="M 10 75 Q 30 50 60 45 Q 90 42 115 30" stroke="#2a2520" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="4 3"/>
-              <path d="M 110 26 L 118 30 L 113 38" stroke="#2a2520" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="tm-label">that's me!</span>
-          </div>
-
-          <!-- Drop zone for money (around the character) -->
-          <div id="money-drop-zone">
-            <div class="drop-ring"></div>
-            <span class="drop-hint">✦ drop money here ✦</span>
-          </div>
-        </div>
-
-        <!-- RIGHT: "What I do" card -->
-        <div class="hero-right">
-          <div class="whatido">
-            <p class="wd-kicker">What I do</p>
-            <ul class="ct-list">
-              <li><span class="wd-ico">👁</span>Computer Vision</li>
-              <li><span class="wd-ico">📈</span>Machine Learning</li>
-              <li><span class="wd-ico">🤖</span>AI &amp; LLM Applications</li>
-              <li><span class="wd-ico">📊</span>Data Processing</li>
-              <li><span class="wd-ico">🚀</span>Model Deployment</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═════════════════ ABOUT ═════════════════ -->
-    <section id="about" class="page" data-spawn-money="2">
-      <p class="sect-kicker"><em>About Me</em></p>
-      <h2 class="sect-title">a little about <em>me</em></h2>
-
-      <div class="about-grid">
-        <div class="about-left">
-          <blockquote class="about-quote-main">
-            <p>I'm an AI Engineer specializing in Computer Vision, Machine Learning, and end-to-end AI application development.</p>
-            <p>I love turning ideas into practical solutions that solve real-world problems. My goal is to create systems that are smart, scalable, and actually used.</p>
-            <p>I'm currently exploring multimodal AI, intelligent automation, and building tools that empower people and businesses.</p>
-          </blockquote>
-          <div class="about-pullquote">
-            <span class="pq-mark">“</span>
-            <p>Solve meaningful problems. Keep shipping. Make an impact.</p>
-          </div>
-        </div>
-
-        <div class="about-right">
-          <div class="stat-grid">
-            <div class="scrap scrap-stat"><span class="scrap-num">3.69</span><span class="scrap-lbl">GPA</span></div>
-            <div class="scrap scrap-stat"><span class="scrap-num">5+</span><span class="scrap-lbl">Projects</span></div>
-            <div class="scrap scrap-stat"><span class="scrap-num">3</span><span class="scrap-lbl">Years of<br/>Experience</span></div>
-            <div class="scrap scrap-stat"><span class="scrap-num">8+</span><span class="scrap-lbl">Tech Used</span></div>
+        <section class="character-stage reveal reveal-three" aria-label="Gabriel character">
+          <div class="character-aura" aria-hidden="true">
+            <span class="aura-ring aura-ring-one"></span>
+            <span class="aura-ring aura-ring-two"></span>
+            <span class="aura-axis"></span>
           </div>
 
-          <div class="areas-card">
-            <p class="areas-title">Areas I Enjoy</p>
-            <ul class="areas-list">
-              <li>Computer Vision</li>
-              <li>LLMs &amp; NLP</li>
-              <li>Automation</li>
-              <li>Data &amp; Analytics</li>
-            </ul>
-            <div class="areas-flower">
-              <svg viewBox="0 0 100 80" width="100" height="80">
-                <g transform="translate(50,40)">
-                  <ellipse cx="0" cy="-18" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8"/>
-                  <ellipse cx="14" cy="-10" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8" transform="rotate(45 14 -10)"/>
-                  <ellipse cx="14" cy="10" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8" transform="rotate(135 14 10)"/>
-                  <ellipse cx="0" cy="18" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8"/>
-                  <ellipse cx="-14" cy="10" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8" transform="rotate(45 -14 10)"/>
-                  <ellipse cx="-14" cy="-10" rx="5" ry="10" fill="#fde8c0" stroke="#b89658" stroke-width="0.8" transform="rotate(135 -14 -10)"/>
-                  <circle cx="0" cy="0" r="5" fill="#d4a04c"/>
-                </g>
-                <path d="M 30 78 Q 35 55 45 40" stroke="#4a6b3a" stroke-width="1.2" fill="none"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═════════════════ EXPERIENCE ═════════════════ -->
-    <section id="experience" class="page" data-spawn-money="3">
-      <p class="sect-kicker"><em>Experience</em></p>
-      <h2 class="sect-title">where I've <em>worked</em></h2>
-
-      <div class="timeline-clean">
-        <div class="timeline-row">
-          <div class="tlr-year">2026</div>
-          <div class="tle-card">
-            <span class="tle-type tle-current">Current</span>
-            <h3>Computer Vision Engineer Intern</h3>
-            <p class="tle-company">PT. Petrokimia Gresik · 2026 – Present</p>
-            <ul class="tle-list">
-              <li>Developed and deployed CV models for real-world systems</li>
-              <li>Worked on object detection, classification and tracking pipelines</li>
-              <li>Built tools for annotation, evaluation and model monitoring</li>
-            </ul>
-            <div class="tle-tags"><span>Python</span><span>PyTorch</span><span>OpenCV</span><span>AWS</span></div>
-          </div>
-        </div>
-
-        <div class="timeline-row">
-          <div class="tlr-year">2025</div>
-          <div class="tle-card">
-            <span class="tle-type tle-fulltime">Full-time</span>
-            <h3>AI Engineer</h3>
-            <p class="tle-company">CV LetConnect · 2025</p>
-            <ul class="tle-list">
-              <li>Designed and trained ML models used in the fintech &amp; retail space</li>
-              <li>Built ETL + data pipelines for model training</li>
-              <li>Improved model performance by 17% through feature engineering</li>
-            </ul>
-            <div class="tle-tags"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>SQL</span></div>
-          </div>
-        </div>
-
-        <div class="timeline-row">
-          <div class="tlr-year">2024</div>
-          <div class="tle-card">
-            <span class="tle-type tle-internship">Leadership</span>
-            <h3>Head of Image Processing Division</h3>
-            <p class="tle-company">Polinema Robotics · AROC_PL · 2024</p>
-            <ul class="tle-list">
-              <li>Led team of 8 building image processing for humanoid robot soccer</li>
-              <li>Real-time pipelines achieving 70% higher accuracy</li>
-              <li>Helped boost win chance by 20% through better decision-making</li>
-            </ul>
-            <div class="tle-tags"><span>YOLO</span><span>ROS</span><span>Real-time CV</span><span>Leadership</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═════════════════ AWARDS ═════════════════ -->
-    <section id="awards" class="page" data-spawn-money="3">
-      <p class="sect-kicker"><em>Recognitions</em></p>
-      <h2 class="sect-title">awards &amp; <em>wins</em></h2>
-
-      <div class="awards-grid">
-        <div class="award-featured">
-          <span class="af-stamp">GRAND CHAMPION</span>
-          <div class="af-main">
-            <span class="af-trophy">🏆</span>
-            <h3>Hackathon Compsphere 2025</h3>
-            <p class="af-desc">Built an AI-powered solution for real-time flood detection with satellite imagery and predictive analytics.</p>
-          </div>
-          <span class="af-winner">WINNER</span>
-        </div>
-
-        <div class="awards-mini">
-          <div class="cert-card">
-            <span class="cert-trophy">🥉</span>
-            <h4>2nd Runner Up</h4>
-            <p class="cert-event">AI Solutions Challenge 2024</p>
-          </div>
-          <div class="cert-card">
-            <span class="cert-trophy">🥈</span>
-            <h4>2nd Place</h4>
-            <p class="cert-event">DataVic Showdown 2023</p>
-          </div>
-          <div class="cert-card">
-            <span class="cert-trophy">🥉</span>
-            <h4>3rd Place</h4>
-            <p class="cert-event">CodeSprint Hackathon 2023</p>
-          </div>
-          <div class="cert-card">
-            <span class="cert-trophy">⭐</span>
-            <h4>Finalist</h4>
-            <p class="cert-event">AI Excellence Awards 2023</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═════════════════ PROJECTS ═════════════════ -->
-    <section id="projects" class="page" data-spawn-money="3">
-      <p class="sect-kicker"><em>Selected Work</em></p>
-      <h2 class="sect-title">things I've <em>built</em></h2>
-
-      <div class="projects-featured">
-        <div class="pf-visual">
-          <span class="pf-emoji">🧠</span>
-          <div class="pf-grid-bg"></div>
-        </div>
-        <div class="pf-content">
-          <span class="pf-badge">★ FEATURED PROJECT</span>
-          <h3>LLM for Autism Support</h3>
-          <p class="pf-desc">Built an LLM-powered chatbot that provides information, resources, and guidance for individuals and families affected by autism.</p>
-          <div class="pf-tags">
-            <span>Python</span><span>Hugging Face</span><span>LangChain</span><span>Gradio</span>
-          </div>
-        </div>
-        <div class="pf-controls">
-          <button class="pf-nav pf-prev" aria-label="previous">‹</button>
-          <button class="pf-nav pf-next" aria-label="next">›</button>
-        </div>
-        <div class="pf-plant">
-          <svg viewBox="0 0 120 140" width="100%" height="100%">
-            <rect x="40" y="110" width="40" height="25" fill="#c77d48" rx="3"/>
-            <rect x="38" y="106" width="44" height="8" fill="#b56b3a" rx="2"/>
-            <path d="M60 110 Q 45 80 35 55 Q 30 40 40 35 Q 50 38 50 50 Q 55 35 65 38 Q 72 50 62 60 Q 75 55 80 65 Q 82 78 70 82 Q 78 85 78 95 Q 72 105 62 100 Z" fill="#4a6b3a"/>
-            <path d="M60 110 Q 72 80 82 55 Q 90 38 82 32 Q 72 35 70 48 Q 68 35 58 38 Q 54 48 60 58" fill="#3d5a2f" opacity="0.9"/>
-          </svg>
-        </div>
-      </div>
-
-      <div class="projects-mini">
-        <div class="proj-mini">
-          <span class="pm-emoji">🤟</span>
-          <h4>Sign Language App</h4>
-          <p>Real-time sign language detection using CV &amp; CNN.</p>
-          <div class="pm-tags"><span>Python</span><span>TensorFlow</span><span>MediaPipe</span></div>
-        </div>
-        <div class="proj-mini">
-          <span class="pm-emoji">🌱</span>
-          <h4>Plant Health Detection</h4>
-          <p>Detects plant diseases using transfer learning.</p>
-          <div class="pm-tags"><span>PyTorch</span><span>FastAPI</span><span>MobileNet</span></div>
-        </div>
-        <div class="proj-mini">
-          <span class="pm-emoji">🗑</span>
-          <h4>IoT Smart Bin</h4>
-          <p>Smart waste monitoring system with alerts.</p>
-          <div class="pm-tags"><span>Arduino</span><span>Firebase</span><span>Node-RED</span></div>
-        </div>
-        <div class="proj-mini">
-          <span class="pm-emoji">💬</span>
-          <h4>RAG Chatbot</h4>
-          <p>LLM chatbot with document retrieval &amp; contextual answers.</p>
-          <div class="pm-tags"><span>LLM</span><span>FAISS</span><span>Streamlit</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═════════════════ SKILLS / TOOLKIT ═════════════════ -->
-    <section id="skills" class="page" data-spawn-money="2">
-      <p class="sect-kicker"><em>My Stack</em></p>
-      <h2 class="sect-title">my <em>toolkit</em></h2>
-
-      <div class="toolkit-grid">
-        <div class="tk-card tk-left">
-          <p class="tk-heading">Languages &amp; Frameworks</p>
-          <div class="tk-chips">
-            <span class="tk-chip"><span class="tk-dot tk-dot-py"></span>Python</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-cpp"></span>C++</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-js"></span>JavaScript</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-sql"></span>SQL</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-bash"></span>Bash</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-py"></span>PyTorch</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-tf"></span>TensorFlow</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-sk"></span>Scikit-learn</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-fa"></span>FastAPI</span>
+          <div id="character-wrap" class="character-wrap">
+            <img class="character-image is-active" data-state="idle" src="/assets/character/neural-idle.webp" alt="" />
+            <img class="character-image" data-state="greeting" src="/assets/character/neural-greeting.webp" alt="" />
+            <img class="character-image" data-state="thinking" src="/assets/character/neural-thinking.webp" alt="" />
+            <img class="character-image" data-state="speaking" src="/assets/character/neural-speaking.webp" alt="" />
+            <img class="character-image" data-state="error" src="/assets/character/neural-error.webp" alt="" />
+            <div class="character-rim" aria-hidden="true"></div>
           </div>
 
-          <p class="tk-heading">Libraries</p>
-          <div class="tk-chips">
-            <span class="tk-chip"><span class="tk-dot tk-dot-cv"></span>OpenCV</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-pd"></span>Pandas</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-np"></span>NumPy</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-lc"></span>LangChain</span>
-          </div>
-
-          <p class="tk-heading">Tools</p>
-          <div class="tk-chips">
-            <span class="tk-chip"><span class="tk-dot tk-dot-git"></span>Git</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-dk"></span>Docker</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-aws"></span>AWS</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-lx"></span>Linux</span>
-            <span class="tk-chip"><span class="tk-dot tk-dot-vsc"></span>VS Code</span>
-          </div>
-        </div>
-
-        <div class="tk-card tk-right">
-          <p class="tk-heading">What I Use</p>
-
-          <div class="tk-row">
-            <span class="tkr-ico">📓</span>
+          <div class="identity-plate">
             <div>
-              <strong>Notebook</strong>
-              <span>VS Code, Jupyter, Google Colab</span>
+              <span class="identity-name">Gabriel Batavia Xaverius</span>
+              <span class="identity-role">AI · Computer Vision · Applied ML</span>
             </div>
-          </div>
-          <div class="tk-row">
-            <span class="tkr-ico">📊</span>
-            <div>
-              <strong>Data</strong>
-              <span>Pandas, NumPy, OpenCV</span>
-            </div>
-          </div>
-          <div class="tk-row">
-            <span class="tkr-ico">🧠</span>
-            <div>
-              <strong>Modeling</strong>
-              <span>PyTorch, TensorFlow, Scikit-learn</span>
-            </div>
-          </div>
-          <div class="tk-row">
-            <span class="tkr-ico">🚀</span>
-            <div>
-              <strong>Deploy</strong>
-              <span>Docker, FastAPI, AWS</span>
+            <div class="character-status" aria-live="polite">
+              <span class="status-light" aria-hidden="true"></span>
+              <span id="character-status-label">Ready</span>
             </div>
           </div>
 
-          <div class="tk-plant">
-            <svg viewBox="0 0 100 160" width="100%" height="100%">
-              <path d="M50 160 Q 50 120 45 90 Q 40 60 45 30" stroke="#4a6b3a" stroke-width="1.5" fill="none"/>
-              <path d="M45 50 Q 30 45 25 30 Q 35 30 45 45 Z" fill="#5a7a44"/>
-              <path d="M47 70 Q 65 65 70 50 Q 60 48 47 65 Z" fill="#4a6b3a"/>
-              <path d="M45 95 Q 28 90 22 75 Q 33 74 45 90 Z" fill="#5a7a44"/>
-              <path d="M48 120 Q 68 115 74 100 Q 62 98 48 115 Z" fill="#4a6b3a"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
+          <p class="portrait-alt">Near-photoreal AI representation of Gabriel Batavia.</p>
+        </section>
+      </main>
 
-    <!-- ═════════════════ HIRE ME BANNER ═════════════════ -->
-    <section class="hire-banner-section">
-      <div class="hire-banner">
-        <div class="hb-leaves hb-leaves-l">
-          <svg viewBox="0 0 80 120" width="80" height="120">
-            <path d="M10 100 Q 30 70 45 40 Q 50 25 40 20 Q 28 25 25 42 Q 20 30 12 30 Q 8 42 18 52 Q 8 55 8 70 Q 14 80 24 75 Q 14 85 18 100 Z" fill="#2a4520" opacity="0.75"/>
-          </svg>
-        </div>
-        <div class="hb-leaves hb-leaves-r">
-          <svg viewBox="0 0 80 120" width="80" height="120">
-            <path d="M70 100 Q 50 70 35 40 Q 30 25 40 20 Q 52 25 55 42 Q 60 30 68 30 Q 72 42 62 52 Q 72 55 72 70 Q 66 80 56 75 Q 66 85 62 100 Z" fill="#2a4520" opacity="0.75"/>
-          </svg>
-        </div>
+      <nav class="memory-rail" aria-label="Profile memory index">
+        <span class="rail-label">Memory index</span>
+        <button type="button" data-memory="experience"><span>02</span>Experience</button>
+        <button type="button" data-memory="work"><span>03</span>Work</button>
+        <button type="button" data-memory="recognition"><span>04</span>Recognition</button>
+        <a href="/Gabriel-Batavia-CV.pdf" target="_blank" rel="noreferrer"><span>05</span>CV ↗</a>
+      </nav>
 
-        <div class="hb-character">
-          <div class="hb-polaroid">
-            <img id="contact-char-img" src="assets/character/idling.png" alt="Gabriel" draggable="false" />
-            <span class="hb-polaroid-tape"></span>
-          </div>
-
-          <!-- Tutorial step 3 — "drop money on me!" sign -->
-          <div id="drop-sign" class="drop-sign hidden">
-            <svg class="ds-arrow" viewBox="0 0 120 90" width="120" height="90">
-              <path d="M 15 20 Q 50 15 85 55 Q 92 68 96 78" stroke="#fde8c0" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="5 3"/>
-              <path d="M 88 72 L 98 82 L 102 68" stroke="#fde8c0" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="ds-label">drop your money<br/>on me! 💸</span>
-          </div>
-        </div>
-
-        <div class="hb-text">
-          <h2>Let's build something<br/><em>meaningful</em> together.</h2>
-          <p>Open to exciting opportunities and collaborations.</p>
-        </div>
-
-        <div class="hb-cta">
-          <button id="hire-me-btn" class="hire-me-btn">
-            <span class="hmb-text">HIRE ME NOW</span>
-            <span class="hmb-arrow">→</span>
-          </button>
-          <div class="hb-plane">
-            <svg viewBox="0 0 120 80" width="120" height="80">
-              <path d="M 100 25 L 80 35 L 95 45 L 90 55 L 105 50 L 115 30 Z" fill="#fbf3e2" stroke="#fbf3e2" stroke-width="1"/>
-              <path d="M 90 42 L 100 48" stroke="#fbf3e2" stroke-width="1"/>
-              <path d="M 5 60 Q 30 55 55 45 Q 75 40 85 35" stroke="#d4a04c" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="3 3"/>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Interactive layer: drop zone + pet counter (hidden visually, activated by JS) -->
-        <div id="contact-character" class="hb-interactive-layer">
-          <div id="pet-layer"></div>
-          <div class="pet-counter hidden" id="pet-counter">
-            <span class="pc-heart">💚</span>
-            <span class="pc-count"><span id="pet-count">0</span> pets</span>
-          </div>
-        </div>
-        <div id="contact-drop-zone">
-          <span class="cdz-hint">✦ drop money here too ✦</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═════════════════ CONTACT ═════════════════ -->
-    <section id="contact" class="page page-contact" data-beg="true">
-
-      <!-- Hidden interactive reveal (kept for JS hook) -->
-      <div class="interactive-reveal" id="interactive-reveal">
-        <span class="ir-spark">✨</span>
-        <div class="ir-text">
-          <span class="ir-tiny">psst…</span>
-          <span class="ir-main">did you know this page is actually <em>interactive</em>?</span>
-        </div>
-        <span class="ir-spark">✨</span>
-      </div>
-
-      <p class="sect-kicker"><em>Get In Touch</em></p>
-      <h2 class="sect-title">let's <em>talk</em> <span class="st-star">✦</span></h2>
-
-      <div class="contact-grid">
-        <div class="contact-letter">
-          <p class="cl-intro">Want to work together or just say hi? I'm always open to interesting conversations and opportunities.</p>
-          <p class="cl-intro">Let's build something meaningful and make an impact together.</p>
-          <a href="mailto:gabriel.xevereus@gmail.com" class="cl-email">
-            <span class="cl-email-ico">✉</span>gabriel.xevereus@gmail.com
-          </a>
-          <a href="mailto:gabriel.xevereus@gmail.com" class="btn btn-primary cl-sayhi">Say Hello <span>👋</span></a>
-        </div>
-
-        <div class="contact-cards">
-          <a href="mailto:gabriel.xevereus@gmail.com" class="cc-card">
-            <span class="cc-ico">✉</span>
-            <div><span class="cc-lbl">Email</span><span class="cc-val">gabriel.xevereus@gmail.com</span></div>
-          </a>
-          <a href="tel:+6285157677512" class="cc-card">
-            <span class="cc-ico">📞</span>
-            <div><span class="cc-lbl">Phone</span><span class="cc-val">+62 851-5767-7512</span></div>
-          </a>
-          <a href="https://linkedin.com/in/gabriel-xevereus" target="_blank" class="cc-card">
-            <span class="cc-ico cc-ico-li">in</span>
-            <div><span class="cc-lbl">LinkedIn</span><span class="cc-val">linkedin.com/in/gabriel-xevereus</span></div>
-          </a>
-          <a href="https://github.com/GabrielBatavia" target="_blank" class="cc-card">
-            <span class="cc-ico">⌘</span>
-            <div><span class="cc-lbl">GitHub</span><span class="cc-val">github.com/gabrielxevereus</span></div>
-          </a>
-        </div>
-
-        <div class="contact-sticky">
-          <p class="cs-text">Let's build together!</p>
-          <svg class="cs-arrow" viewBox="0 0 80 60" width="80" height="60">
-            <path d="M 10 10 Q 30 30 40 50" stroke="#2a2520" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="3 3"/>
-            <path d="M 37 45 L 42 52 L 48 45" stroke="#2a2520" stroke-width="2" fill="none" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
-
-      <footer class="book-end">
-        <p class="be-credit">© 2026 Gabriel Bautista &amp; Xevereus · All rights reserved.</p>
-        <a href="#hero" class="back-top">Back to Top <span>↑</span></a>
+      <footer class="scene-footer">
+        <span>Malang, Indonesia</span>
+        <span class="footer-line" aria-hidden="true"></span>
+        <a href="mailto:gabrielbatavia7@gmail.com">gabrielbatavia7@gmail.com</a>
       </footer>
-    </section>
-
-  </main>
-
-  <!-- ╔══ FLOATING COMPANION WIDGET ══╗ -->
-  <div id="char-companion" class="hidden">
-    <div class="comp-bubble" id="comp-bubble"></div>
-    <div class="comp-frame">
-      <img id="comp-img" src="assets/character/idling.png" alt="Gabriel companion" draggable="false" />
-      <span class="comp-badge" id="comp-badge"></span>
     </div>
-    <div id="comp-drop-zone">
-      <span class="cdz-label">↓ drop here ↓</span>
-    </div>
-  </div>
 
-  <!-- ╔══ SPEECH BUBBLE ══╗ -->
-  <div id="char-speech" class="speech-bubble hidden"></div>
+    <div id="memory-backdrop" class="memory-backdrop" hidden></div>
+    <aside id="memory-panel" class="memory-panel" aria-hidden="true" aria-labelledby="memory-title">
+      <div class="memory-header">
+        <div>
+          <span class="memory-eyebrow">Verified memory / <span id="memory-number">01</span></span>
+          <h2 id="memory-title">Profile</h2>
+        </div>
+        <button id="memory-close" type="button" aria-label="Close profile memory">
+          <span>Close</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        </button>
+      </div>
+      <div id="memory-content" class="memory-content"></div>
+    </aside>
 
-  <!-- ╔══ MONEY LAYER ══╗ -->
-  <div id="money-layer"></div>
-
-  <!-- ╔══ TUTORIAL TOAST ══╗ -->
-  <div id="tutorial-toast" class="hidden">
-    <span class="tt-icon"></span>
-    <div class="tt-body">
-      <span class="tt-title"></span>
-      <span class="tt-text"></span>
-    </div>
-    <button class="tt-close" aria-label="dismiss">×</button>
-  </div>
-
-  <!-- ╔══ CONFETTI LAYER ══╗ -->
-  <div id="confetti-layer"></div>
-
-  <!-- ╔══ TIP COUNTER ══╗ -->
-  <div id="coin-jar">
-    <span class="jar-emoji">🫙</span>
-    <div class="jar-info">
-      <span class="jar-num"><span id="coin-count">0</span> × Rp 100</span>
-      <span class="jar-label">= <span id="coin-total">Rp 0</span></span>
-    </div>
-  </div>
-
-  <!-- ╔══ THANK YOU MODAL ══╗ -->
-  <div id="thanks-modal" class="hidden">
-    <div class="thanks-box">
-      <img src="assets/character/get6tip.png" alt="Thank you" class="thanks-img"/>
-      <h2>Thank you!! 🙏</h2>
-      <p class="thanks-msg">You just made my day. I'll send my CV right away — check your email!</p>
-      <button id="thanks-close" class="thanks-btn">Close</button>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="js/money.js"></script>
-  <script src="js/main.js"></script>
-
-</body>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

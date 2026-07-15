@@ -1,0 +1,140 @@
+{
+  "identity": {
+    "name": "Gabriel Batavia Xaverius",
+    "headline": "Informatics Engineering Student | AI, Computer Vision, and Applied Machine Learning",
+    "email": "gabrielbatavia7@gmail.com",
+    "phone": "0851-5767-7512",
+    "location": "Malang, Indonesia",
+    "summary": "Undergraduate Informatics Engineering student at State Polytechnic of Malang with strong interests in artificial intelligence, computer vision, large language models, and applied machine learning systems. Experienced in AI solutions through internships, national competitions, robotics projects, and collaborative research."
+  },
+  "education": {
+    "institution": "State Polytechnic of Malang",
+    "program": "Informatics Engineering",
+    "period": "August 2023 - Present",
+    "gpa": "3.71 / 4.00"
+  },
+  "experience": [
+    {
+      "role": "Computer Vision Engineer Intern",
+      "organization": "PT Petrokimia Gresik",
+      "period": "January 2026 - Present",
+      "facts": [
+        "Contributed to an internal company web system that enhanced operational efficiency and streamlined processes for eight team members.",
+        "Collaborates with the research team to develop computer vision models for industrial and business requirements.",
+        "Contributed to the design, testing, and enhancement of AI-based solutions, resulting in three successful project implementations.",
+        "Supports system development by combining web technologies, AI models, and data-driven analysis."
+      ]
+    },
+    {
+      "role": "AI Engineer",
+      "organization": "CV LetConnect Canada",
+      "period": "April 2025 - Present",
+      "facts": [
+        "Designed LLM architecture and inference pipelines for integration into mobile and web applications.",
+        "Supported deployment of AI-powered features for applications launched on the Apple App Store and Google Play Store.",
+        "Presented AI demos, product use cases, and technical concepts to clients and foundation partners.",
+        "Contributed to securing collaborations with three foundation partners through AI product demonstrations."
+      ]
+    },
+    {
+      "role": "Head of Image Processing Division",
+      "organization": "Polinema Robotics | AROC_PL",
+      "period": "November 2024 - Present",
+      "facts": [
+        "Leads a team of eight members in the Image Processing Division for humanoid robot development.",
+        "Develops real-time computer vision pipelines for robots competing in the Indonesian Humanoid Soccer Robot Contest.",
+        "Improved object detection and image processing accuracy by up to 70 percent through pipeline optimization.",
+        "Designed decision-making logic that improved robot performance and competition readiness.",
+        "Mentors members in computer vision, robotics software, and applied AI implementation."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "LLMForAutism",
+      "context": "Collaboration with Malang Autism Center",
+      "facts": [
+        "Developed a specialized LLM-based system to support children with verbal autism.",
+        "The product is planned for official launch and intellectual property registration by Malang Autism Center."
+      ]
+    },
+    {
+      "name": "Sign Language Application",
+      "context": "Academic project",
+      "facts": [
+        "Developed a sign language application to support communication for deaf users.",
+        "Built in collaboration with lecturers and community partners."
+      ]
+    },
+    {
+      "name": "IoT System for Forest Fire Prevention",
+      "context": "Academic project",
+      "facts": [
+        "Created an IoT monitoring system for early detection and prevention of peatland fires.",
+        "Integrated sensors and monitoring logic to identify potential fire risks."
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Second Runner-Up",
+      "event": "AI Innovation Challenge, COMPFEST 16 - Universitas Indonesia",
+      "date": "October 2024",
+      "fact": "Developed an LLM-powered educational system helping Indonesian college students understand industry needs and career preparation."
+    },
+    {
+      "title": "Audience Favorite",
+      "event": "AI Innovation Challenge, COMPFEST 16 - Universitas Indonesia",
+      "date": "October 2024",
+      "fact": "Received audience recognition for an innovative AI-based education solution."
+    },
+    {
+      "title": "Second Place",
+      "event": "Electro Weeks National Competition - State Polytechnic of Malang",
+      "date": "October 2025",
+      "fact": "Built an IoT-based system to detect and prevent fire risks in peatland areas."
+    },
+    {
+      "title": "Best Innovation Award Winner",
+      "event": "Hackathon Compsphere - President University",
+      "date": "October 2025",
+      "fact": "Created an AI-powered game prototype for PT Kereta Api Indonesia."
+    },
+    {
+      "title": "Second Place, Innovation Creation Category",
+      "event": "KMIPN - Politeknik Negeri Padang",
+      "date": "October 2025",
+      "fact": "Built LLMForAutism with Malang Autism Center to support children with verbal autism."
+    },
+    {
+      "title": "Finalist",
+      "event": "UI/UX Competition 2024 - YOters Indonesia",
+      "fact": "Selected as a finalist in a digital product design and user experience competition."
+    }
+  ],
+  "certifications": [
+    "Microsoft Certified: Azure AI Engineer Associate",
+    "Microsoft Azure AI-102 training",
+    "AWS re/Start 2025",
+    "TOEIC score 820"
+  ],
+  "teaching": [
+    "Workshop Assistant for an NVIDIA Workshop",
+    "National webinar speaker for AI for Mental Health Awareness Among Youth with WCC Dian Mutiara Parahita",
+    "Seminar speaker for AI for Productivity with Workshop & Riset Informatika",
+    "Mentor for Informatics students in technology, programming, UI/UX basics, and AI-related topics"
+  ],
+  "organization": {
+    "role": "IT Staff",
+    "organization": "KSPM Polinema - Capital Market Study Group",
+    "facts": [
+      "Supported digital content creation and management.",
+      "Assisted with IT-related needs for organizational activities and digital communication."
+    ]
+  },
+  "answering_rules": [
+    "Distinguish completed work from planned launches.",
+    "Do not infer unlisted technologies, metrics, links, or responsibilities.",
+    "When information is absent, say it is not available in the verified profile and suggest contacting Gabriel."
+  ]
+}

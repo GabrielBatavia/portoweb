@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/health", "destination": "/api/health" },
+    { "source": "/v1/chat", "destination": "/api/v1/chat" }
+  ],
+  "functions": {
+    "api/v1/chat.js": {
+      "maxDuration": 30
+    }
+  }
+}
